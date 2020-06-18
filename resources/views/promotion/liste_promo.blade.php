@@ -6,7 +6,7 @@
     
     <div class="card">
             <div class="card-header">
-              	<h2 class="card-title">Listes des promotions</h2>
+              	<h2 class="card-title">Listes des promotions Bouzour</h2>
          	  <a class="btn btn-app"  href="{{ route('promo.create') }}" title="Ajouter une promotion">
         <i class="fas fa-plus"></i> 
     </a>

@@ -24,8 +24,7 @@
                   </div>
                   <div class="form-group">
                       <label for="description">Description</label>
-                      <textarea class="form-control {{ $errors->has('description') ? 'is-invalid' :''}}" id="description" name="description" rows="5">{{old('description')}}
-                      </textarea>
+                      <textarea class="form-control {{ $errors->has('description') ? 'is-invalid' :''}}" id="description" name="description" rows="5">{{old('description')}}</textarea>
                       {!! $errors->first('description','<div class="invalid-feedback">:message</div>') !!}
                   </div>
                   <!-- /.input group -->

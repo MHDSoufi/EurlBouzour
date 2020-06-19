@@ -22,5 +22,11 @@ class Promo extends Model
     	return $this->hasMany('App\Model\ImagesPromo');
     }
 
-    
+    /**
+     * Relation entre promo et bien.
+     */
+    public function biens()
+    {
+        return $this->belongsToMany('App\Model\Bien');
+    }
 }

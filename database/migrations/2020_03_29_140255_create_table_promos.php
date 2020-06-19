@@ -23,6 +23,8 @@ class CreateTablePromos extends Migration
             $table->string('adr_AR');
             $table->string('longitude');
             $table->string('lontitude');
+            $table->string('coverImage');
+            $table->string('status');
             $table->integer('comune_id')->unsigned();
             $table->integer('user_id')->unsigned();
         });

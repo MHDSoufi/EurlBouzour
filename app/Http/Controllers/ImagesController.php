@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Session;
+use File;
 
 class ImagesController extends Controller
 {
@@ -14,8 +15,14 @@ class ImagesController extends Controller
 
     	$_IMAGE = $request->file('file');
         $filename = time().'_'.Str::random(5).'.'.$_IMAGE->getClientOriginalExtension();
-        $uploadPath = public_path().'/images/promotions/';
+
+        $uploadPath = public_path().'/images/promotions/'.$request->nomPromo;
+        if(!file_exists($uploadPath)){
+            File::makeDirectory($uploadPath, 0777, true);
+        }
         $_IMAGE->move($uploadPath,$filename);
+        
+       
 
         echo ($filename);
 

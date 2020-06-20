@@ -122,8 +122,7 @@
             
                 </div>
 
-                <button type="button" class="btn btn-primary btn-flat" 
-                      data-toggle="modal" data-target="#modal-picture">
+                <button type="button" class="btn btn-primary btn-flat" id="PhotoButton">
                     Télécharger des photos
                 </button>
                 <input type="hidden" autocomplete="OFF" name="imgs" id="imgs">
@@ -151,6 +150,7 @@
               <form action="" class="dropzone" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="dz-message" data-dz-message><span>Glisser vos photos</span></div>
+                <input type="hidden" name="nomPromo" id="nomPromo">
               </form>
             </div>
             <div class="modal-footer justify-content-between">
@@ -228,7 +228,20 @@ var i = 0;
         infoText : false
      });
 
-     //fonction onchange 
+     //fonction apparaite drop zone
+     $('#PhotoButton').on('click', function(e){
+     // alert("sa marche");
+      var nom_promo = document.getElementById('name').value;
+      var champPromo = document.getElementById('nomPromo');
+      if(nom_promo == ""){
+        alert("vous devez d'abord entrer le nom de la promotion");
+      }else{
+        champPromo.value = nom_promo;
+        //document.getElementById("#").showModal();
+        $('#modal-picture').modal('show');
+      }
+
+     }); 
 
 
       // Changement de pays

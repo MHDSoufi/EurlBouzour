@@ -21,7 +21,9 @@ Route::resource('/promo', 'PromoController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('comune/{id}', 'ComuneController@commune')->name('comune');
+Route::post('/comune/Add', 'ComuneController@addCommune')->name('AddComune');
 
 Route::post('/promo/image/upload', 'ImagesController@fileUpload');
 Route::get('promo/image/delete', 'ImagesController@removeUpload');

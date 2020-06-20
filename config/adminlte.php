@@ -44,7 +44,7 @@ return [
     |
     */
 
-    'logo' => null,
+    'logo' => 'Eurl<b>Bouzour</b>',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -207,40 +207,27 @@ return [
     */
 
     'menu' => [
-        ['header' => 'Utilisateur'],
         [
             'text' => 'Utilisateurs',
             'url'  => 'user',
             'icon' => 'fas fa-fw fa-users',
 
         ],
-        ['header' => 'Biens'],
         [
             'text' => 'Promotion',
             'url'  => 'promo',
             'icon' => 'fas fa-fw fa-building',
 
         ],
-
         [
-            'text' => 'Appartement',
-            'url'  => 'apart',
-            'icon' => 'fas fa-fw fa-couch',
+            'text'        => 'Communes',
+            'url'  => '#',
+            'icon' => 'fas fa-fw fa-compass',
         ],
         [
-            'text' => 'Bureau',
-            'url'  => 'bureau',
-            'icon' => 'fas fa-fw fa-desktop',
-        ],
-        [
-            'text' => 'Local',
-            'url'  => 'local',
-            'icon' => 'fas fa-fw fa-store',
-        ],
-        [
-            'text' => 'Place de parking',
-            'url'  => 'parking',
-            'icon' => 'fas fa-fw fa-parking',
+            'text'        => 'Commoditées',
+            'url'  => '#',
+            'icon' => 'fas fa-fw fa-folder-plus',
         ],
         
     ],

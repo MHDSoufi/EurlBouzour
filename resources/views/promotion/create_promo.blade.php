@@ -97,12 +97,12 @@
                 </div>
                 
                 </div>
-                <div class="col-2">
+                <div class="col-2" id="btnAddCom">
                   <a class="btn btn-app" 
                       style="margin-top: 32px;min-width: 30px; width:50px;height: 38px;padding: 5px 5px;" 
                       title="Ajouter une commune"
-                      data-toggle="modal" data-target="#modal-default">
-                      <i class="fas fa-plus-circle"></i>
+                      data-toggle="modal" data-target="#modal-comune">
+                      <i class="fas fa-plus-circle" style="margin-top: 5px;"></i>
                  </a>
                 </div>
                 </div>
@@ -137,7 +137,7 @@
          </form>
          </div>
        </div>
-       <!--           MODEL       -->
+       <!--           MODEL Drop Zonz       -->
         <div class="modal fade" id="modal-picture">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -155,6 +155,40 @@
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
+
+      <!--           MODEL Commune       -->
+        <div class="modal fade" id="modal-comune">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Ajouter une commune à la wilaya <span id="nomWilaya"></span></h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <span id="form_result"></span>
+              <form method="post" id="simple_form" class="form-horizontal">
+                @csrf
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-map-marked-alt"></i></span>
+                  </div>
+                  <input type="text" name="intitulet" class="form-control" placeholder="Nom de la commune" id="creerCommune">
+                  <input type="hidden" name="wilayaId" id="wilayaId">
+              </div>
+              <div class="form-group" align="center">
+                <input type="hidden" name="action" id="action" value="Ajouter" />
+                <input type="submit" name="action_button" class="btn btn-primary" value="Ajouter">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+              </div>
+              </form>
             </div>
           </div>
           <!-- /.modal-content -->
@@ -183,6 +217,8 @@ var acceptedFileTypes = "image/*"; //dropzone requires this param be a comma sep
 var imageDataArray = new Array;
 // fileList variable to store current files index and name
 var fileList = new Array;
+var btnComune = document.getElementById("btnAddCom");
+btnComune.style.visibility = "hidden";
 var i = 0;  
   $(function () {
      $('.duallistbox').bootstrapDualListbox({        
@@ -198,8 +234,46 @@ var i = 0;
       // Changement de pays
     $('#wilaya').on('change', function(e) {
         var wilaya_id = e.target.value;
+        var nom_wilaya = document.getElementById("nomWilaya");
+        document.getElementById("wilayaId").value = wilaya_id;
+        nomWilaya.innerHTML = e.target.options[wilaya_id].text;
+        btnComune.style.visibility = "visible";
+        idWilaya = wilaya_id;
         comune_id = false;
         cityUpdate(wilaya_id);
+    });
+
+    // Add Commune
+    $('#simple_form').on('submit', function(e){
+        e.preventDefault();
+        var action_url = '';
+       
+        if($('#action').val() == "Ajouter"){
+          action_url = "{{ route('AddComune') }}";
+        }
+        $.ajax({
+          type: 'post',
+          url : action_url,
+          method : "POST",
+          data: $(this).serialize(),
+          dataType: "json",
+          success:function(data){
+            var html ='';
+            if(data.errors){
+              html = '<div class = "alert alert-danger">';
+                html += '<p>' + data.errors + '</p>';
+              html += '</div>';
+            }
+            if(data.success && data.idWilaya){
+              html = '<div class="alert alert-success"> '+ data.success+ '</div>';
+              $("#simple_form")[0].reset();
+              cityUpdate(data.idWilaya);
+            }
+                     
+
+            $('#form_result').html(html);
+          }
+        });
     });
  
     // Requête Ajax pour les villes
@@ -216,6 +290,10 @@ var i = 0;
                 $('#comune').val(comune_id).prop('selected', true);
             }
         });
+    }
+    // Requête Ajax pour ajouter une commune 
+    function addCity(){
+
     }
     //***********************************************************************
     //code drop zone 

@@ -89,7 +89,8 @@ class PromoController extends Controller
      */
     public function edit($id)
     {
-        //
+      $promo = Promo::findOrFail($id);
+      return view('promotion.edit_promo', ['promo' => $promo]);
     }
 
     /**

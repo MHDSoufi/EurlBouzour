@@ -27,7 +27,7 @@
                       <td style="text-align: center;vertical-align: middle;">
                         <div class="btn-group">
                           <a href="{{ route('promo.show', $promo->id)}}"  class="btn btn-default">Voir <i class="fas fa-eye"></i></a>
-                          <a href="" class="btn btn-info">Modifier <i class="fas fa-edit"></i></a>
+                          <a href="{{ route('promo.edit', $promo->id)}} " class="btn btn-info">Modifier <i class="fas fa-edit"></i></a>
                           
                             <button type="submit" class="btn btn-danger" style="         border-top-left-radius: 0;
                                        border-bottom-left-radius: 0;"

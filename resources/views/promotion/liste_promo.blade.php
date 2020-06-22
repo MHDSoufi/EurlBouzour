@@ -23,7 +23,7 @@
                 <tbody>
                     @foreach($promos as $promo)
                     <tr>
-                      <td><img height="70" src="  {{url('images/promotions/'.getLienImage($promo->id))}} "  /> <strong>{{$promo->nom_promo}}</strong> {{$promo->adr .' '. App\Model\Comune::find($promo->comune_id)['intitulet']}}</td>
+                      <td><img height="70" src="  {{url('images/promotions/'.$promo->nom_promo.'/'.getLienImage($promo->id))}} "  /> <strong>{{$promo->nom_promo}}</strong> {{$promo->adr .' '. App\Model\Comune::find($promo->comune_id)['intitulet']}}</td>
                       <td style="text-align: center;vertical-align: middle;">
                         <div class="btn-group">
                           <a href="{{ route('promo.show', $promo->id)}}"  class="btn btn-default">Voir <i class="fas fa-eye"></i></a>

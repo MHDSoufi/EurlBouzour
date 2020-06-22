@@ -105,7 +105,7 @@ return [
     'classes_content_header' => 'container-fluid',
     'classes_content' => 'container-fluid',
     'classes_sidebar' => 'sidebar-light-primary accent-dark elevation-4',
-    'classes_sidebar_nav' => 'navbar-light accent-dark',
+    'classes_sidebar_nav' => '',
     'classes_topnav' => 'navbar-dark navbar-indigo',
     'classes_topnav_nav' => 'navbar-expand-md',
     'classes_topnav_container' => 'container',

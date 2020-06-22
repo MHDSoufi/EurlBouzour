@@ -20,7 +20,10 @@
                				 <h3 class="card-title">
                   				Description
                				 </h3>
-               				 <button style="float: right;">modif</button>
+               				 <button id="DisUpdate" class="btn btn-app" style="max-width:30px;height:30px;float: right;">
+               				 	<i class="fas fa-edit">             				 		
+               				 	</i>
+               				 </button>
               			</div>
               <!-- /.card-header -->
               			<div class="card-body">
@@ -125,13 +128,13 @@
              </div>
               </div>
             <div class="row">
-              <div class="col-md-3">
+              <div class="col-md-4">
                 <a href="{{route('promo.index')}}" class="btn btn-block btn-danger ">Retour à la liste des promotion</a>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-4">
                 <a href="#" class="btn btn-block btn-primary ">Voir la promotion</a>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-4">
                 <a href="#" class="btn btn-block btn-success ">Voir la Gallery d'images</a>
               </div>
             </div>
@@ -140,11 +143,68 @@
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
+      <!--           MODAL update       -->
+        <div class="modal fade" id="modal-update">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" id="titreModal"></h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+             
+              <form method="post" action="{{ route('promo.update', $promo->id) }}" id="simple_form" class="form-horizontal">
+                @csrf 
+                @method('PUT')
+                <div class="form-group" id="DivUpdate">
+                	
+                </div> 
+                <button class="btn btn-primary" type="submit">Modifier</button>            
+              </form>
+            </div>
+          </div>
+          <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+      </div>
 @stop
 @section('plugins.Datatables', true)
+@section('plugins.Sweetalert2', true)
+@section('css')
+<style type="text/css">
+	.btn-app {
+    font-size: 10px;
+    height: 40px;
+    margin: 0 0 5px 5px;
+    min-width: 40px;
+    padding: 5px 5px;}
+</style>
+@stop
 @section('js')
+ @if(Session::has('message'))
+  <script>
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+  </script>
+  <script type="text/javascript">
+   
+    //sweet alert function 
+   Toast.fire({
+        type: 'success',
+        title: '{{Session::get("message")}}'
+      });
+
+  </script>
+ @endif
 <script type="text/javascript">
 $(document).ready(function() {
+
     $('#comoditeTable').DataTable({
       "paging": true,
       "lengthChange": true,
@@ -165,8 +225,27 @@ $(document).ready(function() {
       "oLanguage": {"sUrl": "//cdn.datatables.net/plug-ins/1.10.20/i18n/French.json"},
           
       });
+
+    /*Update des élément*/
+
+    $('#DisUpdate').on('click', function(event){
+    	$("#modal-update").modal("show");
+    	var div = document.getElementById('DivUpdate');
+    	var divStylModal = document.getElementsByClassName("modal-dialog");
+    	var titre = document.getElementById('titreModal');    	
+    	titre.innerHTML ="Moodifier la discription";
+    	var elem = document.createElement("TEXTAREA");
+    	elem.className = "form-control";
+    	elem.name= "Descrip";
+    	elem.rows = "5";
+    	console.log(divStylModal);
+    	divStylModal[0].classList.add("modal-lg");
+    	var t = document.createTextNode("{{ $promo->description }}");
+    	elem.appendChild(t);
+    	div.appendChild(elem);
+    });
 } );
-    
+
 
 </script>
 @stop

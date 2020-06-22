@@ -7,7 +7,7 @@ use App\Http\Requests\CreatPromoRequest;
 use Illuminate\Support\Facades\Storage;
 use App\Model\Promo;
 use App\Model\ImagesPromo;
-
+use Session;
 
 class PromoController extends Controller
 {
@@ -102,7 +102,14 @@ class PromoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       if(isset($request->Descrip)){
+        Promo::where('id', $id)->update([
+            'description' => $request->Descrip,
+        ]);
+        Session::flash('message', 'La description a été modifier');
+        Session::flash('alert-class', 'alert-success');
+        return redirect(route('promo.edit', $id));
+       }
     }
 
     /**

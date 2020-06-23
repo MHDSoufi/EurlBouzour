@@ -110,6 +110,24 @@ class PromoController extends Controller
         Session::flash('alert-class', 'alert-success');
         return redirect(route('promo.edit', $id));
        }
+        if(isset($request->namePromo)){
+        Promo::where('id', $id)->update([
+            'nom_promo' => $request->namePromo,
+        ]);
+        Session::flash('message', 'Le titre a été modifier');
+        Session::flash('alert-class', 'alert-success');
+        return redirect(route('promo.edit', $id));
+       }
+
+        if(isset($request->adrPromo) && isset($request->comune)){
+        Promo::where('id', $id)->update([
+            'adr' => $request->adrPromo,
+            'comune_id' => $request->comune,
+        ]);
+        Session::flash('message', 'L\'adresse a été modifier');
+        Session::flash('alert-class', 'alert-success');
+        return redirect(route('promo.edit', $id));
+       }
     }
 
     /**

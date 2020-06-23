@@ -7,13 +7,19 @@
         <div class="row">
           <div class="col-12">
             <div class="callout callout-info">
-            	  <button id="titreUpdate" class="btn btn-app" >
+            	  <button id="titreUpdate" class="btn btn-app"   
+                        style="margin-top: -12px;"
+                        title="Modifier le titre"
+                        >
                             <i class="fas fa-edit">                         
                             </i>
                   </button>
               <h5><b>{{ $promo->nom_promo}}</b></h5>
               {{$promo->adr .' '. App\Model\Comune::find($promo->comune_id)['intitulet']}}
-                  <button id="adrUpdate" class="btn btn-app" >
+                  <button id="adrUpdate" class="btn btn-app" 
+                          style="margin-right: -45px;margin-top: -3px;"
+                          title="Modifier l'adresse"
+                          >
                             <i class="fas fa-edit">                         
                             </i>
                   </button>
@@ -26,7 +32,8 @@
                				 <h3 class="card-title">
                   				Description
                				 </h3>
-               				 <button id="DisUpdate" class="btn btn-app" >
+               				 <button id="DisUpdate" class="btn btn-app"
+                               title="Modifier la description" >
                				 	<i class="fas fa-edit">             				 		
                				 	</i>
                				 </button>
@@ -45,7 +52,11 @@
                   <div class="card">
                     <div class="card-header">
                       <h3 class="card-title">Liste des comoditées</h3>
-                      <button style="float: right;">Ajout</button>
+                      <button id="DisUpdate" class="btn btn-app"
+                               title="Ajouter une comoditées" >
+                        <i class="fas fa-plus">                         
+                        </i>
+                       </button>
                     </div>
                 <!-- /.card-header -->
                   <div class="card-body">
@@ -292,7 +303,8 @@ $(document).ready(function() {
 
       var elemSelect = document.createElement("SELECT"); // le button pour changer la commune
       elemSelect.className = "form-control";
-      elemSelect.setAttribute('id', 'comune');  
+      elemSelect.setAttribute('id', 'comune');
+      elemSelect.name = "comune";  
       elemSelect.style.marginTop = "10px";
       div.appendChild(elemSelect);   
       cityUpdate();

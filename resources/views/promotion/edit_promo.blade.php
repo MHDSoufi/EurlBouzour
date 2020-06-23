@@ -7,10 +7,16 @@
         <div class="row">
           <div class="col-12">
             <div class="callout callout-info">
-            	<button style="float:right;">ARB</button>
+            	  <button id="titreUpdate" class="btn btn-app" >
+                            <i class="fas fa-edit">                         
+                            </i>
+                  </button>
               <h5><b>{{ $promo->nom_promo}}</b></h5>
               {{$promo->adr .' '. App\Model\Comune::find($promo->comune_id)['intitulet']}}
-              <button style="float:right;">Modif</button>
+                  <button id="adrUpdate" class="btn btn-app" >
+                            <i class="fas fa-edit">                         
+                            </i>
+                  </button>
             </div>
             <!-- Main content -->
             <div class="invoice p-3 mb-3">
@@ -20,7 +26,7 @@
                				 <h3 class="card-title">
                   				Description
                				 </h3>
-               				 <button id="DisUpdate" class="btn btn-app" style="max-width:30px;height:30px;float: right;">
+               				 <button id="DisUpdate" class="btn btn-app" >
                				 	<i class="fas fa-edit">             				 		
                				 	</i>
                				 </button>
@@ -149,7 +155,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h4 class="modal-title" id="titreModal"></h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button type="button" class="close" id="btnClose" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -175,6 +181,7 @@
 @section('css')
 <style type="text/css">
 	.btn-app {
+    float: right;
     font-size: 10px;
     height: 40px;
     margin: 0 0 5px 5px;
@@ -226,6 +233,14 @@ $(document).ready(function() {
           
       });
 
+    /*rénitialisé le form */
+
+      $('#modal-update').on('hidden.bs.modal', function () {
+        var myNode = document.getElementById("DivUpdate");
+          while (myNode.firstChild) {
+          myNode.removeChild(myNode.firstChild);
+        }
+      });
     /*Update des élément*/
 
     $('#DisUpdate').on('click', function(event){
@@ -244,6 +259,60 @@ $(document).ready(function() {
     	elem.appendChild(t);
     	div.appendChild(elem);
     });
+
+    //Titre et adress update
+
+    $('#titreUpdate').on('click', function(event){
+      $("#modal-update").modal("show");
+      var div = document.getElementById('DivUpdate');
+      var titre = document.getElementById('titreModal');      
+      titre.innerHTML ="Moodifier le Titre de la promotion";
+      var elem = document.createElement("INPUT");//champ input Text Nom promo
+      elem.setAttribute("type", "text");
+      elem.className = "form-control";
+      elem.name = "namePromo";
+      elem.value = "{{ $promo->nom_promo }}";
+      div.appendChild(elem); 
+      
+    });
+
+    //Adresse Update
+    $("#adrUpdate").on('click', function(event){
+       $("#modal-update").modal("show");
+       var div = document.getElementById('DivUpdate');
+      var titre = document.getElementById('titreModal');      
+      titre.innerHTML ="Moodifier l'adresse de la prommotion";
+      var elemAdr = document.createElement("INPUT");//champ input Text adresse complete
+      elemAdr.setAttribute("type", "text"); 
+      elemAdr.className = "form-control";
+      elemAdr.style.marginTop = "10px";
+      elemAdr.name = "adrPromo";
+      elemAdr.value = "{{ $promo->adr }}";
+      div.appendChild(elemAdr);
+
+      var elemSelect = document.createElement("SELECT"); // le button pour changer la commune
+      elemSelect.className = "form-control";
+      elemSelect.setAttribute('id', 'comune');  
+      elemSelect.style.marginTop = "10px";
+      div.appendChild(elemSelect);   
+      cityUpdate();
+    });
+
+    // fonction des commune
+    function cityUpdate(wilayaId) {
+      $.get('{{ url('comune/byId')}}'+'/'+'{{$promo->comune_id}}', function(data) {
+            $('#comune').empty();
+            $.each(data, function(index, comune) {
+                $('#comune').append($('<option>', { 
+                    value: comune.id,
+                    text : comune.intitulet 
+                }));
+            });
+           
+      $('#comune').val("{{$promo->comune_id}}").prop('selected', true);
+            
+    });
+    }
 } );
 
 

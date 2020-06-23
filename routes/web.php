@@ -23,6 +23,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('comune/{id}', 'ComuneController@commune')->name('comune');
+Route::get('comune/byId/{id}', 'ComuneController@communeById')->name('comuneById');
 Route::post('/comune/Add', 'ComuneController@addCommune')->name('AddComune');
 
 Route::post('/promo/image/upload', 'ImagesController@fileUpload');

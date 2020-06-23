@@ -15,6 +15,12 @@ class ComuneController extends Controller
         return Wilaya::find($id)->comune;
     } 
 
+    public function communeById($id)
+    {
+        $wilayaId = Comune::find($id)['wilaya_id'];
+        return Wilaya::find($wilayaId)->comune;
+    } 
+
     public function addCommune(Request $request)
     {
     	$rule = array('intitulet' => "required" );

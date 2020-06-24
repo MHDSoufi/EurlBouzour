@@ -52,7 +52,7 @@
                   <div class="card">
                     <div class="card-header">
                       <h3 class="card-title">Liste des comoditées</h3>
-                      <button id="DisUpdate" class="btn btn-app"
+                      <button id="ComUpdate" class="btn btn-app"
                                title="Ajouter une comoditées" >
                         <i class="fas fa-plus">                         
                         </i>
@@ -74,7 +74,9 @@
                              {{ $Comodite->intitulet }}
                           </td>
                          <td>
-                          <button>supprime</button>
+                          <button class="btn btn-app" value="{{ $Comodite->id }}" title="Suprimer la comodité">
+                            <i class="fas fa-times" style="color: red;" ></i>
+                          </button>
                          </td>
                        </tr>
                        @endforeach                
@@ -96,9 +98,9 @@
                       <tr>
                         <th style="width: 40%;">Intitulet des biens</th>
                         <th style="width: 10%;">Surface</th>
-                        <th style="width: 10%;">Quantitées</th>
+                        <th style="width: 40px;">Quantitées</th>
                         <th style="width: 20%;">Prix</th>
-                        <th style="width: 20%;">Action</th>
+                        <th style="width: 25%;">Action</th>
                       </tr>
                     </thead>
                    <tbody>
@@ -309,6 +311,34 @@ $(document).ready(function() {
       div.appendChild(elemSelect);   
       cityUpdate();
     });
+
+    //Ajout d'une comodité
+    $("#ComUpdate").on('click', function(event){
+      $("#modal-update").modal("show");
+       var div = document.getElementById('DivUpdate');
+      var titre = document.getElementById('titreModal');   
+      titre.innerHTML ="Ajouter une Comodotée";
+      var comodSelect = document.createElement("SELECT"); // le button pour changer la commune
+      comodSelect.className = "form-control";
+      comodSelect.setAttribute('id', 'comod');
+      comodSelect.name = "Comodite[]";
+      div.appendChild(comodSelect);
+      comodNa();
+
+    });
+
+    // fonction lisete des comodité non atribué
+    function comodNa(promoId){
+      $.get('{{ url('comode')}}'+'/'+'{{$promo->id}}', function(data) {
+            $('#comod').empty();
+            $.each(data, function(index, comode) {
+                $('#comod').append($('<option>', { 
+                    value: comode.id,
+                    text : comode.intitulet 
+                }));
+            });
+             });
+    }
 
     // fonction des commune
     function cityUpdate(wilayaId) {

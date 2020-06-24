@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\DB;
 use App\Model\Comodite;
 use App\Model\Wilaya;
 use App\Model\Promo;
+use Illuminate\Database\Eloquent\Builder;
 if (!function_exists('giveWilaya')) {
 	 function giveWilaya(){
 		return DB::table('wilayas')->get();
@@ -34,3 +35,14 @@ if (!function_exists('getLienImageAll')) {
 		return $images;
 	}
 }
+
+/*if (!function_exists('getComoditeNa')) {
+	 function getComoditeNa($promo_id){
+
+		$comodes = Comodite::whereDoesntHave('promos', function (Builder $query){
+			$query->where('promo_id', 1);
+		})->get();
+
+		return $comodes;
+	}
+}*/

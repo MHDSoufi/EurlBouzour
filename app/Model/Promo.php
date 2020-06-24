@@ -3,7 +3,7 @@
 namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
-
+use App\Model\Comodite;
 class Promo extends Model
 {
 	protected $guarded = ['id'];
@@ -16,6 +16,8 @@ class Promo extends Model
 
         return $this->belongsToMany('App\Model\Comodite', 'promos_comodites', 'promo_id', 'comodite_id');
     }
+
+ 
 
     public function imagePromo()
     {

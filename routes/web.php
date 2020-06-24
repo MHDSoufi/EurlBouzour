@@ -29,6 +29,7 @@ Route::post('/comune/Add', 'ComuneController@addCommune')->name('AddComune');
 
 //les routes pour les comodité
 Route::get('comode/{id}', 'ComoditeController@giveComodeNa')->name('comode');
+Route::get('comode/{promoId}/{comodId}', 'ComoditeController@deleteComode')->name('comodeDelet');
 
 Route::post('/promo/image/upload', 'ImagesController@fileUpload');
 Route::get('promo/image/delete', 'ImagesController@removeUpload');

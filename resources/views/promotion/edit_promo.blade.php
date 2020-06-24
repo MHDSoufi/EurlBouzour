@@ -74,9 +74,14 @@
                              {{ $Comodite->intitulet }}
                           </td>
                          <td>
-                          <button class="btn btn-app" value="{{ $Comodite->id }}" title="Suprimer la comodité">
+                          <form action="{{ route('comodeDelet', [$promo->id,$Comodite->id]) }}">
+                            @csrf 
+                            @method('DELETE')
+                            <button class="btn btn-app"  
+                                  title="Suprimer la comodité">
                             <i class="fas fa-times" style="color: red;" ></i>
                           </button>
+                          </form>
                          </td>
                        </tr>
                        @endforeach                
@@ -180,7 +185,7 @@
                 <div class="form-group" id="DivUpdate">
                 	
                 </div> 
-                <button class="btn btn-primary" type="submit">Modifier</button>            
+                <button class="btn btn-primary" type="submit" id="btnModif">Modifier</button>            
               </form>
             </div>
           </div>
@@ -321,11 +326,17 @@ $(document).ready(function() {
       var comodSelect = document.createElement("SELECT"); // le button pour changer la commune
       comodSelect.className = "form-control";
       comodSelect.setAttribute('id', 'comod');
+      comodSelect.setAttribute('multiple' , true);
       comodSelect.name = "Comodite[]";
       div.appendChild(comodSelect);
       comodNa();
 
     });
+
+    //supression d'un comodité
+    function supComode(event){
+      alert(event.id);
+    }
 
     // fonction lisete des comodité non atribué
     function comodNa(promoId){

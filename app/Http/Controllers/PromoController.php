@@ -128,6 +128,15 @@ class PromoController extends Controller
         Session::flash('alert-class', 'alert-success');
         return redirect(route('promo.edit', $id));
        }
+       if(isset($request->Comodite)){
+        $promo = Promo::findOrFail($id);
+        foreach ($request->Comodite as $comodite) {
+        $promo->comodites()->attach($comodite);
+        }
+        Session::flash('message', 'Les Comodiées ont été ajoutés');
+        Session::flash('alert-class', 'alert-success');
+        return redirect(route('promo.edit', $id));
+       }
     }
 
     /**

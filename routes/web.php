@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 Route::resource('/user', 'UserController');
 Route::resource('/promo', 'PromoController');
+Route::resource('/bien', 'BienController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

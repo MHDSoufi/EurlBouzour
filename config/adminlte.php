@@ -220,6 +220,12 @@ return [
 
         ],
         [
+            'text' => 'Biens',
+            'url'  => 'bien',
+            'icon' => 'fas fa-fw fa-bed',
+
+        ],
+        [
             'text'        => 'Communes',
             'url'  => '#',
             'icon' => 'fas fa-fw fa-compass',

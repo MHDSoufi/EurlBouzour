@@ -209,19 +209,19 @@ return [
     'menu' => [
         [
             'text' => 'Utilisateurs',
-            'url'  => 'user',
+            'url'  => 'Admin/user',
             'icon' => 'fas fa-fw fa-users',
 
         ],
         [
             'text' => 'Promotion',
-            'url'  => 'promo',
+            'url'  => 'Admin/promo',
             'icon' => 'fas fa-fw fa-building',
 
         ],
         [
             'text' => 'Biens',
-            'url'  => 'bien',
+            'url'  => 'Admin/bien',
             'icon' => 'fas fa-fw fa-bed',
 
         ],

@@ -13,13 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::resource('/user', 'UserController');
-Route::resource('/promo', 'PromoController');
-Route::resource('/bien', 'BienController');
-Auth::routes();
+// routes IHM Client
+Route::view('/{path?}', 'welcome');
+
+
+Route::resource('Admin/user', 'UserController');
+Route::resource('Admin/promo', 'PromoController');
+Route::resource('Admin/bien', 'BienController');
+
+//les route d'authentification 
+Route::get('Admin/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('Admin/login', 'Auth\AuthController@login');
+Route::get('Admin/logout', 'Auth\AuthController@logout');
+
+    // Registration Routes...
+Route::get('Admin/register', 'Auth\AuthController@showRegistrationForm');
+Route::post('Admin/register', 'Auth\AuthController@register');
+
+    // Password Reset Routes...
+Route::get('Admin/password/reset/{token?}', 'Auth\PasswordController@showResetForm');
+Route::post('Admin/password/email', 'Auth\PasswordController@sendResetLinkEmail');
+Route::post('Admin/password/reset', 'Auth\PasswordController@reset');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

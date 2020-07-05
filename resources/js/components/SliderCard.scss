@@ -1,0 +1,83 @@
+body{
+    overflow-x: hidden;
+}
+#mobilDevice{
+    display: none;
+}
+.Btn-flech-droite{
+                    background: transparent;
+                    border: none;
+                    float: right;
+                    position: absolute;
+                    right: 30%;
+                    margin-top: 175px;
+                    z-index: 9999;
+            }
+.Btn-flech-gauche{
+                    background: transparent;
+                    border: none;
+                    float: right;
+                    position: absolute;
+                    left: 32%;
+                    margin-top: 175px;
+                    z-index: 9999;
+            }
+.cards-slider-wrapper{
+    display: flex;
+    position: static;
+    transition: transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    .card{
+        flex: 1;
+        min-width: 286px;
+        opacity: 0.5;
+        transform: scale(0.7);
+        transition: opacity 300ms linear, transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    }
+}
+
+$i:0;
+@for $i from 0 through 29{
+.cards-slider.active-slide-#{$i} #card-#{$i}{
+    opacity: 1;
+    transform: scale(1);
+}
+}
+
+.cards-slider{
+                position:relative;
+                max-width : 256px;
+                margin: 30px auto;
+
+
+
+                //bordure active
+                &:after{
+                    content:"";
+                    display:block;
+                    width:286px;
+                    height:340px;
+                    outline: 5px solid black;
+                    position:absolute;
+                    top:0;
+                    left:0;
+                 }
+             }
+
+@media screen and (max-width: 375px) {
+   .cards-slider-wrapper{
+    overflow-x: hidden;
+   }
+}
+
+/* ----------- iPad mini ----------- */
+
+@media screen and (max-width: 1024px) {
+ #pcDevice{
+    display: none;
+ }
+
+ #mobilDevice{
+    display:block;
+}
+
+}

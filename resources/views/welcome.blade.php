@@ -15,7 +15,6 @@
     </head>
     <body>
 
-        {{storage('images/Promotion les rosier/1593547733_EWIh2.png')}}
        <div id = "root"></div>
        <script src="{{asset('js/app.js')}}"></script>
        <script src="https://unpkg.com/react/umd/react.production.min.js" crossorigin></script>

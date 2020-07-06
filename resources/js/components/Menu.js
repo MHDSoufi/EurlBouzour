@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button, Container } from 'react-bootstrap';
 
-console.log(window.location.origin);
 function Menu (props){
 	const {location} = props;
 	return (
@@ -22,7 +21,7 @@ function Menu (props){
     			background-color: #f7941e;
     			color:#fff;
     		}
-    		.active{
+    		.activeMenu{
     			background-color: #f7941e;
     			color:#fff;
     		}

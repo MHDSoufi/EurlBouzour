@@ -9793,7 +9793,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "body {\n  overflow-x: hidden;\n}\n\n#mobilDevice {\n  display: none;\n}\n\n.Btn-flech-droite {\n  background: transparent;\n  border: none;\n  float: right;\n  position: absolute;\n  right: 30%;\n  margin-top: 175px;\n  z-index: 9999;\n}\n\n.Btn-flech-gauche {\n  background: transparent;\n  border: none;\n  float: right;\n  position: absolute;\n  left: 32%;\n  margin-top: 175px;\n  z-index: 9999;\n}\n\n.cards-slider-wrapper {\n  display: flex;\n  position: static;\n  transition: transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);\n}\n.cards-slider-wrapper .card {\n  flex: 1;\n  min-width: 286px;\n  opacity: 0.5;\n  transform: scale(0.7);\n  transition: opacity 300ms linear, transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);\n}\n\n.cards-slider.active-slide-0 #card-0 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-1 #card-1 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-2 #card-2 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-3 #card-3 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-4 #card-4 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-5 #card-5 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-6 #card-6 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-7 #card-7 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-8 #card-8 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-9 #card-9 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-10 #card-10 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-11 #card-11 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-12 #card-12 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-13 #card-13 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-14 #card-14 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-15 #card-15 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-16 #card-16 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-17 #card-17 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-18 #card-18 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-19 #card-19 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-20 #card-20 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-21 #card-21 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-22 #card-22 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-23 #card-23 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-24 #card-24 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-25 #card-25 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-26 #card-26 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-27 #card-27 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-28 #card-28 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-29 #card-29 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider {\n  position: relative;\n  max-width: 256px;\n  margin: 30px auto;\n}\n.cards-slider:after {\n  content: \"\";\n  display: block;\n  width: 286px;\n  height: 340px;\n  outline: 5px solid black;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n\n@media screen and (max-width: 375px) {\n  .cards-slider-wrapper {\n    overflow-x: hidden;\n  }\n}\n/* ----------- iPad mini ----------- */\n@media screen and (max-width: 1024px) {\n  #pcDevice {\n    display: none;\n  }\n\n  #mobilDevice {\n    display: block;\n  }\n}", ""]);
+exports.push([module.i, "body {\n  overflow-x: hidden;\n}\n\n#mobilDevice {\n  display: none;\n}\n\n.Btn-flech-droite {\n  background: transparent;\n  border: none;\n  float: right;\n  position: absolute;\n  right: 30%;\n  margin-top: 175px;\n  z-index: 9999;\n}\n\n.Btn-flech-gauche {\n  background: transparent;\n  border: none;\n  float: right;\n  position: absolute;\n  left: 32%;\n  margin-top: 175px;\n  z-index: 9999;\n}\n\n.cards-slider-wrapper {\n  display: flex;\n  position: static;\n  transition: transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);\n}\n.cards-slider-wrapper .card {\n  flex: 1;\n  min-width: 286px;\n  opacity: 0.5;\n  transform: scale(0.7);\n  transition: opacity 300ms linear, transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);\n}\n\n.cards-slider.active-slide-0 #card-0 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-1 #card-1 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-2 #card-2 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-3 #card-3 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-4 #card-4 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-5 #card-5 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-6 #card-6 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-7 #card-7 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-8 #card-8 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-9 #card-9 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-10 #card-10 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-11 #card-11 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-12 #card-12 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-13 #card-13 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-14 #card-14 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-15 #card-15 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-16 #card-16 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-17 #card-17 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-18 #card-18 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-19 #card-19 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-20 #card-20 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-21 #card-21 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-22 #card-22 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-23 #card-23 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-24 #card-24 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-25 #card-25 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-26 #card-26 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-27 #card-27 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-28 #card-28 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider.active-slide-29 #card-29 {\n  opacity: 1;\n  transform: scale(1);\n}\n\n.cards-slider {\n  position: relative;\n  max-width: 256px;\n  margin: 30px auto;\n}\n.cards-slider:after {\n  content: \"\";\n  display: block;\n  width: 286px;\n  height: 340px;\n  outline: 5px solid black;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n\n@media screen and (max-width: 375px) {\n  .cards-slider-wrapper {\n    overflow-x: hidden;\n  }\n}\n/* ----------- iPad mini ----------- */\n@media screen and (max-width: 1024px) {\n  #pcDevice {\n    display: none;\n  }\n\n  #mobilDevice {\n    display: block;\n    margin-top: 50px;\n  }\n}", ""]);
 
 // exports
 
@@ -85341,13 +85341,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-console.log(window.location.origin);
 
 function Menu(props) {
   var location = props.location;
   return (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("style", {
       type: "text/css"
-    }, "\n\n    \t\t.navbar{\n    \t\t\tfont-family: 'Fira Sans', sans-serif;\n    \t\t\tfont-weight: bold;\n    \t\t\t\n    \t\t}\n    \t\t.navbar-light .navbar-nav .nav-link{\n    \t\t\tcolor: black;\n    \t\t}\n    \t\t.navbar-light .navbar-nav .nav-link:hover{\n    \t\t\tbackground-color: #f7941e;\n    \t\t\tcolor:#fff;\n    \t\t}\n    \t\t.active{\n    \t\t\tbackground-color: #f7941e;\n    \t\t\tcolor:#fff;\n    \t\t}\n    \t\t.sticky-top {\n    \t\t\tbackground-color:#fff;\n    \t\t}\n    \t\t.ml-auto{\n    \t\t\tmargin-right:20px;\n    \t\t}\n    \t\t.mr-3{\n    \t\t\tmargin-left: 60px;\n    \t\t}\n    \t\t\n    \t   "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
+    }, "\n\n    \t\t.navbar{\n    \t\t\tfont-family: 'Fira Sans', sans-serif;\n    \t\t\tfont-weight: bold;\n    \t\t\t\n    \t\t}\n    \t\t.navbar-light .navbar-nav .nav-link{\n    \t\t\tcolor: black;\n    \t\t}\n    \t\t.navbar-light .navbar-nav .nav-link:hover{\n    \t\t\tbackground-color: #f7941e;\n    \t\t\tcolor:#fff;\n    \t\t}\n    \t\t.activeMenu{\n    \t\t\tbackground-color: #f7941e;\n    \t\t\tcolor:#fff;\n    \t\t}\n    \t\t.sticky-top {\n    \t\t\tbackground-color:#fff;\n    \t\t}\n    \t\t.ml-auto{\n    \t\t\tmargin-right:20px;\n    \t\t}\n    \t\t.mr-3{\n    \t\t\tmargin-left: 60px;\n    \t\t}\n    \t\t\n    \t   "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"], {
       expand: "sm",
       fixed: "top"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"].Brand, {
@@ -85632,26 +85631,42 @@ function CardPromo(props) {
       variant: "primary"
     }, "Voir les d\xE9tail")))
   );
-}
+} //function pageCarsoul()
+
 
 function SlideCardMobil(props) {
+  // props.propriete.map(property => <CardPromo key={property.id} propriete = {property}/>)
   var i = 0;
   var carsoul = [];
 
   while (i < props.propriete.length) {
     var item = [];
-    /*for (var j = 0; j < 3; j++) {
-        if (i == propriete.length-1) {
-            break;
-        }
-        item.push(<Col><CardPromo key={`${i}`} propriete={`props.propriete[${i}]`}/> </Col>);
-        i++;
-     } 
-     carsoul.push(<Carousel.Item>{item}</Carousel.Item>);*/
-  }
 
-  console.log(carsoul);
-  return (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Carousel"], null)
+    for (var j = 0; j < 3; j++) {
+      /*if (i === props.propriete.length-1 ) {
+          break;
+      }*/
+      item.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
+        key: i,
+        sm: 8,
+        lg: 4
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(CardPromo, {
+        key: props.propriete[i + j].id,
+        propriete: props.propriete[i + j]
+      })));
+    }
+
+    i = i + 3;
+    carsoul.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Carousel"].Item, {
+      key: i
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], null, item)));
+  } //console.table(item); 
+
+
+  return (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Carousel"], {
+      indicators: false,
+      slide: false
+    }, carsoul)
   );
 }
 
@@ -85707,7 +85722,6 @@ var SliderCardCour = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log(navigator.userAgent);
       return (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "pcDevice"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -85745,9 +85759,9 @@ var SliderCardCour = /*#__PURE__*/function (_React$Component) {
               propriete: property
             })
           );
-        }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "mobilDevice"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SlideCardMobil, {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Container"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(SlideCardMobil, {
           propriete: propriete
         }))))
       );

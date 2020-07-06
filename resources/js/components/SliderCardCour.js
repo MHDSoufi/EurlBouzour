@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './SliderCard.scss';
-import { Card, Button, Carousel, Row, Col } from 'react-bootstrap';
+import { Card, Button, Carousel, Row, Col, Container } from 'react-bootstrap';
 let propriete =[ {
     "id" : 0,
     "titre" : "Residence HEY BENSOUNA",
@@ -54,32 +54,42 @@ function CardPromo (props){
         </Card>
     );
 }
-
+//function pageCarsoul()
 function SlideCardMobil(props){
-   /* let i = 0;
-    let carsoul = [];
+   // props.propriete.map(property => <CardPromo key={property.id} propriete = {property}/>)
+    let i = 0;
+    let carsoul = [] ;
     while(i < props.propriete.length){
         let item = [];
-        
-        /*for (var j = 0; j < 3; j++) {
-            if (i == propriete.length-1) {
-                break;
+            
+            for (var j = 0; j < 3; j++) {
+                /*if (i === props.propriete.length-1 ) {
+                    break;
+                }*/
+                item.push(<Col key={i} sm={8} lg={4}>
+                    <CardPromo key={props.propriete[i+j].id} 
+                    propriete={props.propriete[i+j]} />
+                    </Col>);
+                
             }
-            item.push(<Col><CardPromo key={`${i}`} propriete={`props.propriete[${i}]`}/> </Col>);
-            i++;
+            i= i+3;
+            carsoul.push(<Carousel.Item key={i}><Row>{item}</Row></Carousel.Item>)
+            
+            
          } 
-         carsoul.push(<Carousel.Item>{item}</Carousel.Item>);*/
+        
 
           
-    }
-     console.log(carsoul); 
+    
+     //console.table(item); 
 
-    /*return(
-        <Carousel >
+    return(
+        <Carousel indicators={false} slide={false}>
          
-            
+        {carsoul}
+        
         </Carousel>
-    );*/
+    );
 
 }
 
@@ -117,7 +127,6 @@ positionProperty(propriete){
     return propriete[0];
 }
     render(){
-        console.log(navigator.userAgent);
         return (
         <>
         <div id="pcDevice">
@@ -149,9 +158,12 @@ positionProperty(propriete){
                 } 
           </div>
         </div>
-        <div id="mobilDevice">
-            {--<SlideCardMobil propriete={propriete}/>--}
         </div>
+
+        <div id="mobilDevice">
+                <Container>
+                    <SlideCardMobil propriete={propriete}/>
+                </Container>
         </div>
         </>
         );

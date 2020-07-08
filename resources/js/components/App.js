@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Menu from './Menu';
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Acceuil from './Acceuil';
-import Propos from './Propos';
+import Acceuil from './acceuil/Acceuil';
+import Propos from './propos/Propos';
 
 function App() {
     return (

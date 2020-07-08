@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Menu from './Menu';
+import Menu from '../partage/Menu';
 import Slider from'./Slider';
 import SliderCardCour from'./SliderCardCour';
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button, Container } from 'react-bootstrap';

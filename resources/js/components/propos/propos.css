@@ -1,3 +1,4 @@
+
 .container-md, .container-sm, .container-fluid {
                         padding-right: 0px;
                         padding-left: 0px;
@@ -33,3 +34,6 @@
 	text-align: center;
 
 } 
+.btn-outline-warning{
+	margin-right: 10px;
+}

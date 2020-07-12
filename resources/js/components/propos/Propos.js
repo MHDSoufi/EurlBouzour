@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Menu from '../partage/Menu';
+import  '../FontawsomeIcons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { faFacebook } from '@fortawesome/free-solid-svg-icons';
 import "./propos.css";
@@ -9,8 +10,8 @@ import {Button, Container, Row, Col } from 'react-bootstrap';
 function Rubrique(props){
 	let button = [];
 	if (props.buton) {
-						button.push(<Button key={1} variant="outline-warning"><FontAwesomeIcon icon="coffee" /></Button>);
-						button.push(<Button key={2} variant="outline-warning">Site</Button>);
+						button.push(<Button key={1} variant="outline-warning" href={props.lienFace}><FontAwesomeIcon icon={ [ 'fab' , 'facebook-f' ] } /></Button>);
+						button.push(<Button key={2} variant="outline-warning" href={props.lienSite}><FontAwesomeIcon icon="globe" /></Button>);
 					}
 	if (props.oriantation === "gauche"){
 		return(
@@ -49,7 +50,7 @@ function Rubrique(props){
 function Propos (){
 	return (
 		<Container fluid>
-		  <Menu />
+		  <Menu isFixed = {false}/>
 		  <div className="parallax">
 		  	<h2 className="titrePage">Connaître l'EURL BOUZOUR</h2>
 		  </div>
@@ -112,6 +113,8 @@ function Propos (){
 		  			texte ="L’entreprise est aussi connue pour ses projets réalisés dans le domaine du tourisme :
 -Le complexe touristique ZOUHOUR, un hôtels de qualité situé dans la plage la plus connu de Mostaganem « les Sablette » avec 330 lits, des salle de conférence, salle des fêtes restaurent  et piscine " 
 					buton = {true}
+					lienFace="https://www.facebook.com/hotelzouhour/"
+					lienSite ="http://zouhourhotel.com/"
 		  />
 		  <Rubrique oriantation="gauche" 
 		  			url= "/storage/propos/image3.jpg"
@@ -119,6 +122,8 @@ function Propos (){
 		  			texte ="L’entreprise est aussi connue pour ses projets réalisés dans le domaine du tourisme :
 -Le complexe touristique ZOUHOUR, un hôtels de qualité situé dans la plage la plus connu de Mostaganem « les Sablette » avec 330 lits, des salle de conférence, salle des fêtes restaurent  et piscine " 
 				buton = {true}
+				lienFace="https://www.facebook.com/MOSTA-LAND-PARC-Dattraction"
+				lienSite ="https://www.mostalandparc.com/ "
 		  />
 		  </Container>
 		</Container>

@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Acceuil from './acceuil/Acceuil';
 import Propos from './propos/Propos';
+import Faq from './faq/Faq';
+import Contact from './contact/Contact';
 
 function App() {
     return (
@@ -12,6 +14,8 @@ function App() {
         <Router>
           <Route path="/" exact component={Acceuil} />
           <Route path="/propos" exact component={Propos} />
+          <Route path="/faq" exact component={Faq} />
+          <Route path="/contact" exact component={Contact} />
       </Router>
     );
 }

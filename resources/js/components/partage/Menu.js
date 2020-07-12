@@ -1,9 +1,28 @@
-import React from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button, Container } from 'react-bootstrap';
 
+
 function Menu (props){
-	const {location} = props;
+const [navBackground, setNavBackground] = useState(false)
+  const navRef = useRef()
+  navRef.current = navBackground
+  useEffect(() => {
+    const handleScroll = () => {
+      const show = window.scrollY > 10
+      if (navRef.current !== show) {
+        setNavBackground(show)
+      }
+    }
+    document.addEventListener('scroll', handleScroll)
+    return () => {
+      document.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+if (!props.isFixed) {
+
+}
+
 	return (
 		<>
 		<style type="text/css">
@@ -12,6 +31,7 @@ function Menu (props){
     		.navbar{
     			font-family: 'Fira Sans', sans-serif;
     			font-weight: bold;
+                transition: all 0.4s ease;
     			
     		}
     		.navbar-light .navbar-nav .nav-link{
@@ -37,7 +57,7 @@ function Menu (props){
     		
     	   `}
   		</style>
-		<Navbar  expand="sm"  fixed = "top" >
+		<Navbar  expand="sm" fixed = "top" style = {{backgroundColor : navBackground||!props.isFixed  ? "white" : "transparent" }}   >
   			<Navbar.Brand href="#home"><img
     									width={120}
     									height={54}
@@ -55,8 +75,8 @@ function Menu (props){
 			        <NavDropdown.Item href="#action/3.2">Projets livrés</NavDropdown.Item>
 			      </NavDropdown>
 			      <Nav.Link href="">Recrutement</Nav.Link>
-			      <Nav.Link href="">FAQ</Nav.Link>
-			      <Nav.Link href="">Contact</Nav.Link>
+			      <Nav.Link href="/faq">FAQ</Nav.Link>
+			      <Nav.Link href="/contact">Contact</Nav.Link>
     		</Nav>
 		    <Form inline>
 		      <FormControl type="text" placeholder="Rechercher" className="mr-sm-2" />

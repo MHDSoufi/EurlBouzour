@@ -11,6 +11,7 @@ class Acceuil extends React.Component {
             <>
             <style type="text/css">
                 {`
+                    
                     .container-md, .container-sm, .container-fluid {
                         padding-right: 0px;
                         padding-left: 0px;
@@ -18,7 +19,7 @@ class Acceuil extends React.Component {
                 `}
             </style>
             <Container fluid>
-                <Menu /> 
+                <Menu isFixed = {true}/> 
                 <Slider />
                 <SliderCardCour />
                 <h1> Acceuil </h1>

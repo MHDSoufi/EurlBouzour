@@ -1,38 +1,36 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { render } from 'react-dom'
+import L from 'leaflet'
+import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
+import './map-contact.css'
 
 
-//const { Map:LeafletMap, TileLayer, Marker, Popup } = window.ReactLeaflet;
 
-/*console.log(window.ReactLeaflet.LeafletMap);
-
-export default class MapContact extends React.Component {
-
-constructor(props){
-  super(props);
-   this.state = {
-    lat: 51.505,
-    lng: -0.09,
-    zoom: 13,
+class MapContact extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      lat: 35.6987,
+      lng: 0.6349,
+      zoom: 5
+    }
   }
-}
- 
 
   render() {
-    const position = [this.state.lat, this.state.lng]
+    const position = [this.state.lat, this.state.lng];
     return (
-       <LeafletMap center={position} zoom={this.state.zoom}>
-          <TileLayer
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-            url="https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=sk.eyJ1IjoiZXVybGJvdXpvdXIiLCJhIjoiY2tjaXd3czRjMWVpZzMzbzg2dWlwd2dncCJ9.VoUQwaU4a0M-WB2knFidSw"
-          />
-          <Marker position={position}>
-            <Popup>
-              <span>
-                A pretty CSS3 popup. <br /> Easily customizable.
-              </span>
-            </Popup>
-          </Marker>
-        </LeafletMap>
-    )
+      <Map className="map" center={position} zoom={13}>
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+        />
+        <Marker position={position}>
+          <Popup>Bureau Mostaganem</Popup>
+        </Marker>
+       </Map>
+    );
   }
-}*/
+}
+
+
+export default MapContact;

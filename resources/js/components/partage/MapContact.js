@@ -9,15 +9,15 @@ import './map-contact.css'
 class MapContact extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      lat: 35.6987,
-      lng: 0.6349,
-      zoom: 5
-    }
+    /*this.state = {
+      lat: 35.913887,
+      lng: 0.145941 ,
+      zoom: 13
+    }*/
   }
 
   render() {
-    const position = [this.state.lat, this.state.lng];
+    const position = [this.props.lat, this.props.lng];
     return (
       <Map className="map" center={position} zoom={13}>
         <TileLayer

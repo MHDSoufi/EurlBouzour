@@ -34,10 +34,18 @@ let propriete =[ {
 },
 {
     "id" : 5,
-    "titre" : "RESIDENCE  ELYASMINE BELGAID ORAN3",
+    "titre" : "RESIDENCE  ELYASMINE BELGAID ORAN2",
     "adr" : "Adresse complete de la promotion",
     "img" : "/storage/slider/promo4.jpg"
-}
+},
+
+{
+    "id" : 6,
+    "titre" : "RESIDENCE  ELYASMINE BELGAID ORAN2",
+    "adr" : "Adresse complete de la promotion",
+    "img" : "/storage/slider/promo4.jpg"
+},
+
 ];
 
 function CardPromo (props){
@@ -61,18 +69,21 @@ function SlideCardMobil(props){
     let carsoul = [] ;
     while(i < props.propriete.length){
         let item = [];
-            
-            for (var j = 0; j < 3; j++) {
-                /*if (i === props.propriete.length-1 ) {
-                    break;
-                }*/
-                item.push(<Col key={i} sm={8} lg={4}>
-                    <CardPromo key={props.propriete[i+j].id} 
-                    propriete={props.propriete[i+j]} />
+               for (var j = 0; j < 3; j++) {
+                if (typeof (props.propriete[i]) !== "undefined"){
+                    item.push(<Col key={i} sm={8} lg={4}>
+                    <CardPromo key={i} 
+                    propriete={props.propriete[i]} />
                     </Col>);
+                }else {
+                    console.log('ya pas')
+                }
                 
-            }
-            i= i+3;
+                i++;
+                
+            } 
+        
+            
             carsoul.push(<Carousel.Item key={i}><Row>{item}</Row></Carousel.Item>)
             
             
@@ -162,7 +173,7 @@ positionProperty(propriete){
 
         <div id="mobilDevice">
                 <Container>
-                    <SlideCardMobil propriete={propriete}/>
+                    <SlideCardMobil propriete={propriete} />
                 </Container>
         </div>
         </>

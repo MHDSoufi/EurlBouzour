@@ -14,7 +14,7 @@ function Contact(){
 				<h2 className="titreContact">Contact</h2>
 		    </div>
 		    <Container>
-		    	<Tabs defaultActiveKey="mosta" id="uncontrolled-tab-example">
+		    	<Tabs id="uncontrolled-tab-example">
   					<Tab eventKey="mosta" title="Mostaghanem">
   					<Row>
     					<Col sm={6}>
@@ -37,6 +37,7 @@ function Contact(){
     				</Row>
   					</Tab>
   					<Tab eventKey="oran" title="Oran">
+  					<Row>
    						<Col sm={6}>
    							<img 
     						className="imgContact"
@@ -50,25 +51,49 @@ function Contact(){
     							<FontAwesomeIcon icon={ [ 'fab' , 'facebook' ] } />
     							<span>bouzour.promotion.immobiliere</span>
     							</a><br />
-    							<FontAwesomeIcon icon="phone-square" /><span>045 434 153 </span>
+    							<FontAwesomeIcon icon="phone-square" /><span>041 668 012 - 0770 508 759 - 0770 244 666 </span>
     						</div>							
     					</Col>
+    				</Row>
  					</Tab>
+ 					
   					<Tab eventKey="tel" title="Tlemcen" >
+  					<Row>
     					<Col sm={6}>
-
+    						<img 
+    						className="imgContact"
+    						src="storage/contact/Bureau tel.jpg"/>
     					</Col>
     					<Col sm={6}>
-    						<MapContact lat={34.918754} lng={-1.351002}/>   						
+    						<MapContact lat={34.918754} lng={-1.351002}/> 
+    						<div className="coordone">  
+    							<a href="https://www.facebook.com/bouzour.promotion.immobiliere">
+    							<FontAwesomeIcon icon={ [ 'fab' , 'facebook' ] } />
+    							<span>bouzour.promotion.immobiliere</span>
+    							</a><br />
+    							<FontAwesomeIcon icon="phone-square" /><span>0770 133 916 – 0770 370 962 / 043 569 439</span>
+    						</div>  						
     					</Col>
+    				</Row>
   					</Tab>
   					<Tab eventKey="chlef" title="Chlef" >
+  					<Row>
     					<Col sm={6}>
-
+    						<img 
+    						className="imgContact"
+    						src="storage/contact/chlefBureau.jpg"/>
     					</Col>
     					<Col sm={6}>
-    						<MapContact lat={36.153676} lng={1.324959 }/>   						
+    						<MapContact lat={36.153676} lng={1.324959 }/>   
+    						<div className="coordone">  
+    							<a href="https://www.facebook.com/bouzour.promotion.immobiliere">
+    							<FontAwesomeIcon icon={ [ 'fab' , 'facebook' ] } />
+    							<span>bouzour.promotion.immobiliere</span>
+    							</a><br />
+    							<FontAwesomeIcon icon="phone-square" /><span>0770 244 664 / 0770 389 049</span>
+    						</div>						
     					</Col>
+    				</Row>
   					</Tab>
 				</Tabs>
 		    </Container>

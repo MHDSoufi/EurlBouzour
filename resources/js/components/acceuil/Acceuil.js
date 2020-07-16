@@ -21,8 +21,9 @@ class Acceuil extends React.Component {
             <Container fluid>
                 <Menu isFixed = {true}/> 
                 <Slider />
+                <span data-from="0" data-to="25" data-refresh-interval="10">25</span>
                 <SliderCardCour />
-                <h1> Acceuil </h1>
+                
             </Container>
             </>
         );

@@ -69,17 +69,22 @@ function SlideCardMobil(props){
     let carsoul = [] ;
     while(i < props.propriete.length){
         let item = [];
-               for (var j = 0; j < 3; j++) {
+            if(props.mobile){
+                   item.push(<CardPromo key={i} propriete={props.propriete[i]}/>) ;
+                   i++;
+            }else{
+                    for (var j = 0; j < 3; j++) {
+
                 if (typeof (props.propriete[i]) !== "undefined"){
                     item.push(<Col key={i} sm={8} lg={4}>
                     <CardPromo key={i} 
                     propriete={props.propriete[i]} />
                     </Col>);
-                }else {
-                    console.log('ya pas')
                 }
                 
                 i++;
+            }
+               
                 
             } 
         
@@ -139,7 +144,8 @@ positionProperty(propriete){
 }
     render(){
         return (
-        <>
+        <>        
+        <h2 className="titreSlider">Projet en Cours</h2>
         <div id="pcDevice">
             <button type="button" 
                         className="Btn-flech-droite"
@@ -173,7 +179,12 @@ positionProperty(propriete){
 
         <div id="mobilDevice">
                 <Container>
-                    <SlideCardMobil propriete={propriete} />
+                    <SlideCardMobil propriete={propriete} mobile={false}/>
+                </Container>
+        </div>
+        <div id="mobilDevice700">
+                <Container>
+                    <SlideCardMobil propriete={propriete} mobile={true}/>
                 </Container>
         </div>
         </>

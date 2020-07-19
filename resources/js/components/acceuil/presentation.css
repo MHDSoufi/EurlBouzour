@@ -1,0 +1,98 @@
+
+.presente h1{
+	font-size: 25px;
+	max-width: 200px;
+	margin: 0 auto;
+	padding-left: 15px;
+	padding-bottom: 0px;
+	font-weight: bold;
+	color: #f7941e;
+	border-bottom: 4px solid #f7941e;
+}
+.presente h3{
+	font-size: 20px;
+	font-weight: bold;
+	margin-left: 20px;
+}
+.txtPara{ 
+	font-size: 18px;
+	padding: 10px;
+	margin-left: 40px;
+}
+
+.parallaxPresente{
+		 /* The image used */
+  background-image: url("/storage/icons/prensenteFond.png");
+  min-height: 200px;
+  position: relative;
+  opacity: 0.65;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.textePresente{
+	position: absolute;
+  left: 0;
+  top: 5%;
+  width: 100%;
+  text-align: center;
+  opacity: 1;
+  
+}
+
+.textePresente h4{
+	font-size: 40px;
+	font-weight: bold;
+	max-width: 200px;
+	margin-top: 30px;
+	text-align: center;
+	color: #f7941e;
+	margin-left: 120px;
+
+}
+
+.textePresente h4 .border-title{
+	width: 10%;
+	height: 5px;
+	font-size: 10px !important;
+	margin: 0 auto;
+	background-color:#f7941e; 
+	margin-bottom: -20px;
+}
+
+.textePresente p{
+	font-size: 30px;
+	margin-top: 15px;
+	font-weight: bold;
+	color: #fff; 
+}
+
+.expTitle{margin-right: 50px}
+.expTxt{margin-left: 50px;}
+.logTxt{margin-left: 80px;}
+.empTxt{margin-left: 100px}
+.proTitle{margin-right: 110px}
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+  .txtPara {
+	margin-left: 20px;
+}
+.parallaxPresente{height: 100%}
+}
+
+@media only screen and (max-device-width: 736px) {
+  .txtPara {
+  	max-width: 70%;
+  	margin-left: 20px;
+	font-size: 14px;
+}
+.parallaxPresente{height: 600px;}
+.expTitle{left: 0}
+.expTxt{margin-left:0px;}
+.logTxt{margin-left: -20px;}
+.empTxt{margin-left: 0px}
+.proTitle{margin-right: 0px}
+}

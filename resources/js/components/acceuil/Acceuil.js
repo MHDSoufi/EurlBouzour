@@ -22,8 +22,9 @@ class Acceuil extends React.Component {
             <Container fluid>
                 <Menu isFixed = {true}/> 
                 <Slider />
-                <SliderCardCour />
+                <SliderCardCour isEnCour={true} title="Projet en Cours"/>
                 <Presentation />
+                <SliderCardCour isEnCour={false} title="Projet Livrés"/>
             </Container>
             </>
         );

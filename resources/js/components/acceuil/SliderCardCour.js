@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './SliderCard.scss';
 import { Card, Button, Carousel, Row, Col, Container } from 'react-bootstrap';
-let propriete =[ {
+let proprieteEnCour =[ {
     "id" : 0,
     "titre" : "Residence HEY BENSOUNA",
     "adr" : "Adresse complete de la promotion",
@@ -47,6 +47,29 @@ let propriete =[ {
 },
 
 ];
+
+let proprieteLivre =[ {
+    "id" : 0,
+    "titre" : "SoufiA",
+    "adr" : "Adresse complete de la promotion",
+    "img" : "/storage/slider/promo1.jpg"
+},
+{
+    "id" : 1,
+    "titre" : "PROJET Mehdi",
+    "adr" : "Adresse complete de la promotion",
+    "img" : "/storage/slider/promo2.png"
+},
+{
+    "id" : 2,
+    "titre" : "Promotion Immobiliere Oran - Canastel",
+    "adr" : "Adresse complete de la promotion",
+    "img" : "/storage/slider/promo3.jpg"
+},
+
+
+];
+
 
 function CardPromo (props){
     return(
@@ -114,13 +137,15 @@ class SliderCardCour extends React.Component {
 constructor(props){
     super(props);
     this.state = {
-        property : this.positionProperty(propriete),
+        propriete : this.props.isEnCour ? proprieteEnCour : proprieteLivre,
+        property : this.props.isEnCour ? this.positionProperty(proprieteEnCour) : this.positionProperty(proprieteLivre) ,
     }
 }
+
 nextProperty() {
     const nextIndex = this.state.property.id+1;
     this.setState({
-        property: propriete[nextIndex]
+        property: this.state.propriete[nextIndex]
     })
     
 }
@@ -128,10 +153,11 @@ prevProperty() {
     //console.log(this.state.property.id-1);
     const nextIndex = this.state.property.id-1;
     this.setState({
-        property: propriete[nextIndex]
+        property: this.state.propriete[nextIndex]
     })
 }
 positionProperty(propriete){
+    console.log(propriete);
     if((propriete.length > 2)&&(propriete.length <= 4)){
         return propriete[1];
     }
@@ -143,14 +169,15 @@ positionProperty(propriete){
     return propriete[0];
 }
     render(){
+
         return (
         <>        
-        <h2 className="titreSlider">Projet en Cours</h2>
+        <h2 className="titreSlider">{this.props.title}</h2>
         <div id="pcDevice">
             <button type="button" 
                         className="Btn-flech-droite"
                         onClick = {() => this.nextProperty()}
-                        disabled = {this.state.property.id === propriete.length-1}
+                        disabled = {this.state.property.id === this.state.propriete.length-1}
                         >
                         <img width={30}
                              height={30}
@@ -171,7 +198,7 @@ positionProperty(propriete){
                >
                 
                 {
-                    propriete.map(property => <CardPromo key={property.id} propriete = {property}/>)
+                    this.state.propriete.map(property => <CardPromo key={property.id} propriete = {property}/>)
                 } 
           </div>
         </div>
@@ -179,12 +206,12 @@ positionProperty(propriete){
 
         <div id="mobilDevice">
                 <Container>
-                    <SlideCardMobil propriete={propriete} mobile={false}/>
+                    <SlideCardMobil propriete={this.state.propriete} mobile={false}/>
                 </Container>
         </div>
         <div id="mobilDevice700">
                 <Container>
-                    <SlideCardMobil propriete={propriete} mobile={true}/>
+                    <SlideCardMobil propriete={this.state.propriete} mobile={true}/>
                 </Container>
         </div>
         </>

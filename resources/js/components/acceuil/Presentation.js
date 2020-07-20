@@ -35,7 +35,7 @@ function Presentation(){
 				<p className="logTxt"> Logement remis</p>
 			</Col>
 			<Col md={3} sm={6}>
-				<h4>
+				<h4 className="empTitle"> 
 				<CountUp end={400} />
 				<FontAwesomeIcon icon="user" />
 				<p className="border-title"></p>

@@ -90,9 +90,9 @@
 	font-size: 14px;
 }
 .parallaxPresente{height: 600px;}
-.expTitle{left: 0}
+.expTitle{margin-right: 120px}
 .expTxt{margin-left:0px;}
 .logTxt{margin-left: -20px;}
 .empTxt{margin-left: 0px}
-.proTitle{margin-right: 0px}
+.proTitle{margin-right: 100px}
 }

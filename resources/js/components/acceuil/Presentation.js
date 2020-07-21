@@ -26,7 +26,7 @@ function Presentation(){
 				<p className="expTxt"> ans d'experiences</p>
 			</Col>
 			<Col md={3} sm={6}>
-				<h4>
+				<h4 className="logTitle">
 				<CountUp end={4000} />
 				<FontAwesomeIcon icon="key" />
 				<p className="border-title"></p>

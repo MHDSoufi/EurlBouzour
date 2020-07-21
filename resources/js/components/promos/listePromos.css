@@ -1,0 +1,33 @@
+nav{
+	max-height: 80px;
+}
+.ml-auto{
+	position: absolute;
+	left: 40%;
+	right: 60%;
+}
+.btn_choix{
+	width: 60px;
+	height: 60px;
+	margin-right: 20px;
+	font-size: 40px;
+	border-color: transparent;
+	background-color: transparent;
+	color: black;
+}
+
+.btn_choix:hover{
+	background-color: transparent;
+	border-color: transparent;
+	color: #f7941e;
+}
+
+.building1, .globe1{
+	font-size: 40px;
+	display: inline-block;
+}
+.globe1{
+	position: absolute;
+	top: 25%;
+	right: 20%;
+}

@@ -7,6 +7,7 @@ import Acceuil from './acceuil/Acceuil';
 import Propos from './propos/Propos';
 import Faq from './faq/Faq';
 import Contact from './contact/Contact';
+import Listepromos from './promos/Listepromos';
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/propos" exact component={Propos} />
           <Route path="/faq" exact component={Faq} />
           <Route path="/contact" exact component={Contact} />
+          <Route path="/promo_en_cour" exact component={Listepromos} />
       </Router>
     );
 }

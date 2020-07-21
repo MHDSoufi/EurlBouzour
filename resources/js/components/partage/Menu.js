@@ -2,7 +2,6 @@ import React, {useState, useRef, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button, Container } from 'react-bootstrap';
 
-
 function Menu (props){
 const [navBackground, setNavBackground] = useState(false)
   const navRef = useRef()
@@ -71,7 +70,7 @@ if (!props.isFixed) {
 			      <Nav.Link href="/" >Acceuil</Nav.Link>
 			      <Nav.Link href="/propos">A-Propos</Nav.Link>
 			      <NavDropdown title="Nos Projets" id="basic-nav-dropdown">
-			        <NavDropdown.Item href="#action/3.1">Projets en cours</NavDropdown.Item>
+			        <NavDropdown.Item href="promo_en_cour" >Projets en cours</NavDropdown.Item>
 			        <NavDropdown.Item href="#action/3.2">Projets livrés</NavDropdown.Item>
 			      </NavDropdown>
 			      <Nav.Link href="">Recrutement</Nav.Link>

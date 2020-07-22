@@ -13,10 +13,13 @@ function Menu(){
     									src="/storage/logo.png"
     									 />
     		</Navbar.Brand>
-    		<Nav className="ml-auto" >
-			      <Button className="btn_choix"><FontAwesomeIcon icon="building" className="building1"/><FontAwesomeIcon icon="globe" className="globe1"/></Button>
-			      <Button className="btn_choix"><FontAwesomeIcon icon="globe" /></Button>
+    		<Nav className="choix" >
+			      <Button className="btn_choix "><FontAwesomeIcon icon="building" className="building1"/><FontAwesomeIcon icon="globe" className="globe1"/></Button>
+			      <Button className="btn_choix choisi"><FontAwesomeIcon icon="globe" /></Button>
 			      <Button className="btn_choix"><FontAwesomeIcon icon="building" /></Button> 
+    		</Nav>
+    		<Nav className="retour">
+    			<Button className="btn_retour"><FontAwesomeIcon icon="home" /> Retour à la page d'acceuil</Button>
     		</Nav>
     	</Navbar>
 	);

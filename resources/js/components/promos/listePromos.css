@@ -1,10 +1,9 @@
-nav{
-	max-height: 80px;
-}
-.ml-auto{
+
+.choix{
 	position: absolute;
 	left: 40%;
 	right: 60%;
+	max-height: 80px;
 }
 .btn_choix{
 	width: 60px;
@@ -21,7 +20,9 @@ nav{
 	border-color: transparent;
 	color: #f7941e;
 }
-
+.btn_choix .choisi{
+	color: #f7941e !important;
+}
 .building1, .globe1{
 	font-size: 40px;
 	display: inline-block;
@@ -31,3 +32,16 @@ nav{
 	top: 25%;
 	right: 20%;
 }
+.retour{
+	position: absolute;
+	top: 40%;
+	right: 5%;
+	
+}
+
+.btn_retour{
+	border-color: #f7941e;
+	background-color: transparent; 
+	color: black;
+}
+.btn_retour:hover{background-color: #f7941e; border-color: transparent;}
